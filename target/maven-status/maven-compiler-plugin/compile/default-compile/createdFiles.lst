@@ -1,0 +1,12 @@
+br\com\calvinribeiro\consultamedica\consulta\models\Consulta.class
+br\com\calvinribeiro\consultamedica\config\JacksonConfig.class
+br\com\calvinribeiro\consultamedica\usuario\repositories\UsuarioRepository.class
+br\com\calvinribeiro\consultamedica\consulta\resource\ConsultaResource.class
+br\com\calvinribeiro\consultamedica\consulta\services\ConsultaService.class
+br\com\calvinribeiro\consultamedica\usuario\resource\UsuarioResource.class
+br\com\calvinribeiro\consultamedica\usuario\services\UsuarioService.class
+br\com\calvinribeiro\consultamedica\consulta\repositories\ConsultaRepository.class
+br\com\calvinribeiro\consultamedica\ConsultamedicaApplication.class
+br\com\calvinribeiro\consultamedica\usuario\models\Usuario.class
+br\com\calvinribeiro\consultamedica\usuario\models\Permissao.class
+br\com\calvinribeiro\consultamedica\exception\ExceptionDataIntegrityViolation.class
