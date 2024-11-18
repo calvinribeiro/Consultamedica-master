@@ -40,6 +40,7 @@ public class SecurityConfig {
             "/usuarios/**",
             "/consultas/**"
     };
+<<<<<<< HEAD
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -54,6 +55,8 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .build();
     }
+=======
+>>>>>>> origin/main
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
