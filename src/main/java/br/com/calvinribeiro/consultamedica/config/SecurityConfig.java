@@ -15,19 +15,31 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/usuarios").hasAnyRole("ADMIN", "SECRETARIO")
-                        .requestMatchers(HttpMethod.GET, "/usuarios").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/usuarios").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/usuarios").hasAnyRole("ADMIN", "SECRETARIO")
-                        .anyRequest().authenticated()
-                )
-                .httpBasic(Customizer.withDefaults())
-                .build();
-    }
+
+    private static final String[] PUBLIC_MATCHERS = {
+            "/h2-console/**",
+            "/swagger-ui/**",
+            "/v3/aí-docs/**"
+    };
+
+    private static final String[] PUBLIC_MATCHERS_GET = {
+                "/usuarios/**",
+                "/consultas/**"
+    };
+    private static final String[] PUBLIC_MATCHERS_POST = {
+            "/usuarios/**",
+            "/consultas/**"
+    };
+
+    private static final String[] PUBLIC_MATCHERS_PUT = {
+            "/usuarios/**",
+            "/consultas/**"
+    };
+
+    private static final String[] PUBLIC_MATCHERS_DELETE = {
+            "/usuarios/**",
+            "/consultas/**"
+    };
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
